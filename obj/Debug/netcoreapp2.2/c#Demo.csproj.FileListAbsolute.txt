@@ -1,0 +1,11 @@
+/Users/touathao/Desktop/Pratice/C#/c#Demo/bin/Debug/netcoreapp2.2/c#Demo.deps.json
+/Users/touathao/Desktop/Pratice/C#/c#Demo/bin/Debug/netcoreapp2.2/c#Demo.runtimeconfig.json
+/Users/touathao/Desktop/Pratice/C#/c#Demo/bin/Debug/netcoreapp2.2/c#Demo.runtimeconfig.dev.json
+/Users/touathao/Desktop/Pratice/C#/c#Demo/bin/Debug/netcoreapp2.2/c#Demo.dll
+/Users/touathao/Desktop/Pratice/C#/c#Demo/bin/Debug/netcoreapp2.2/c#Demo.pdb
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.csprojAssemblyReference.cache
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.csproj.CoreCompileInputs.cache
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.AssemblyInfoInputs.cache
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.AssemblyInfo.cs
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.dll
+/Users/touathao/Desktop/Pratice/C#/c#Demo/obj/Debug/netcoreapp2.2/c#Demo.pdb
