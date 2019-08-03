@@ -17,18 +17,18 @@ namespace c_Demo
         {
             //We could also use Var. Var will let the system figure what data they're
 
-            // byte number = 3 ;
-            // int count = 10;
-            // float totalPrice = 29.99f;
-            // char character = 'a';
-            // string firstName = "toua";
-            // bool isWorking = true;
-            // Console.WriteLine(number);
-            // Console.WriteLine(count);
-            // Console.WriteLine(totalPrice);
-            // Console.WriteLine(character);
-            // Console.WriteLine(firstName);
-            // Console.WriteLine(isWorking);
+            byte number = 3;
+            int count = 10;
+            float totalPrice = 29.99f;
+            char character = 'a';
+            string firstName = "toua";
+            bool isWorking = true;
+            Console.WriteLine(number);
+            Console.WriteLine(count);
+            Console.WriteLine(totalPrice);
+            Console.WriteLine(character);
+            Console.WriteLine(firstName);
+            Console.WriteLine(isWorking);
 
             //This is call a format string
             //It take two argument and it will be replace by the value. ie byte.minvaule
@@ -36,31 +36,32 @@ namespace c_Demo
 
             //implicate and explicate converting
             //If there no data lost then implicate converting is no problem
-            // byte  b = 1;
-            // int i = b;
+            byte byt = 1;
+            int i = byt;
 
             //explicate converting
-            // float f = 1.0f;
-            // int i = (int)f;
+            float f = 1.0f;
+            int iI = (int)f;
 
             //Non compatible type
             //Cannot change string to a int
-            // string s = "1234";
-            // int i = Convert.ToInt32(s);
-            // Console.WriteLine(s);
+            string s = "1234";
+            int integer = Convert.ToInt32(s);
+            Console.WriteLine(s);
 
             //Non compatible type overflow
-            // string s = "1234";
-            // byte b = Convert.ToByte(s);
-            // Console.WriteLine(b);
-            //This will give us a error.
+            // string somethingNew = "1234";
+            // byte bByte = Convert.ToByte(somethingNew);
+            // Console.WriteLine(bByte);
+
+            // This will give us a error.
 
             //To handle exception of overflowing
             //we need to wrap it in a try & catch block
             try
             {
-                string s = "1234";
-                byte b = Convert.ToByte(s);
+                string something = "1234";
+                byte b = Convert.ToByte(something);
                 Console.WriteLine(b);
 
             }
@@ -90,35 +91,53 @@ namespace c_Demo
 
             var method = ShippingMethod.Express;
             Console.WriteLine((int)method);
-            var methodId =3;
+            var methodId = 3;
             Console.WriteLine((ShippingMethod)methodId);
             //we need to parse this string into a int
             var methodName = "Express";
             //Enum is a non primiate type. So we need to allocate memory. 
-            var methodShipping = (ShippingMethod)Enum.Parse(typeof(ShippingMethod),methodName);
-            Console.WriteLine("testing "+ methodShipping);
+            var methodShipping = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine("testing " + methodShipping);
 
             //Vaule type
             var Aa = 10;
             var Bb = Aa;
             Bb++;
-            Console.WriteLine(string.Format("Aa:{0},Bb{1}",Aa,Bb));
+            Console.WriteLine(string.Format("Aa:{0},Bb{1}", Aa, Bb));
 
             //Reference type
-            var array1 = new int[3]{0,2,5};
+            var array1 = new int[3] { 0, 2, 5 };
             var array2 = array1;
             array2[0] = 6;
-            Console.WriteLine(string.Format("array1[0]:{0},array2[0]:{1}",array1[0],array2[0]));
-            
+            Console.WriteLine(string.Format("array1[0]:{0},array2[0]:{1}", array1[0], array2[0]));
+
             //This is an example of a value type
             var vauleTypeNumber = 9;
             increment(vauleTypeNumber);
-            Console.WriteLine("testing"+ " " + vauleTypeNumber);
+            Console.WriteLine("testing" + " " + vauleTypeNumber);
+            var random = new Random();
+             const int passwordLength = 10;
+            var buffer = new char[passwordLength];
+            for (var j = 0; j < passwordLength; j++)
+            {
+                buffer[i]=(char)('a'+ random.Next(0,26));
+                var password = new string(buffer);
+                Console.WriteLine(password + " This is password");
+                // Console.WriteLine((char)('a' + random.Next(0, 26)));
+            }
+
+            var dateTime = new DateTime(2019,8,1);
+            var now = DateTime.Now;
+            var today = DateTime.Today;
+
+            Console.WriteLine("testing the date" + " this is now " + now + " this is today " + today);
+            Console.WriteLine(now.ToString("yy-MM-dd"));
+
         }
 
         public static void increment(int number)
         {
-                number +=10;
+            number += 10;
         }
 
 
