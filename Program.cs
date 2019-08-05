@@ -126,6 +126,7 @@ namespace c_Demo
                 // Console.WriteLine((char)('a' + random.Next(0, 26)));
             }
 
+            //Date
             var dateTime = new DateTime(2019,8,1);
             var now = DateTime.Now;
             var today = DateTime.Today;
@@ -133,6 +134,14 @@ namespace c_Demo
             Console.WriteLine("testing the date" + " this is now " + now + " this is today " + today);
             Console.WriteLine(now.ToString("yy-MM-dd"));
 
+            //Time span
+            var timeSpan = new TimeSpan(1,2,3);
+
+            var myFullName = "Toua Thao ";
+            Console.WriteLine("Trim:'{0}' ",myFullName.Trim());
+            Console.WriteLine("ToUpper: '{0}'",myFullName.Trim().ToUpper());
+
+            var index = myFullName.IndexOf(' ');
         }
 
         public static void increment(int number)
