@@ -1,6 +1,7 @@
 ﻿//This is using the system
 //It's like importing for javascript
 using System;
+using System.Collections.Generic;
 using c_Demo.Math;
 
 
@@ -116,18 +117,18 @@ namespace c_Demo
             increment(vauleTypeNumber);
             Console.WriteLine("testing" + " " + vauleTypeNumber);
             var random = new Random();
-             const int passwordLength = 10;
+            const int passwordLength = 10;
             var buffer = new char[passwordLength];
             for (var j = 0; j < passwordLength; j++)
             {
-                buffer[i]=(char)('a'+ random.Next(0,26));
+                buffer[i] = (char)('a' + random.Next(0, 26));
                 var password = new string(buffer);
                 Console.WriteLine(password + " This is password");
                 // Console.WriteLine((char)('a' + random.Next(0, 26)));
             }
 
             //Date
-            var dateTime = new DateTime(2019,8,1);
+            var dateTime = new DateTime(2019, 8, 1);
             var now = DateTime.Now;
             var today = DateTime.Today;
 
@@ -135,18 +136,52 @@ namespace c_Demo
             Console.WriteLine(now.ToString("yy-MM-dd"));
 
             //Time span
-            var timeSpan = new TimeSpan(1,2,3);
+            var timeSpan = new TimeSpan(1, 2, 3);
 
             var myFullName = "Toua Thao ";
-            Console.WriteLine("Trim:'{0}' ",myFullName.Trim());
-            Console.WriteLine("ToUpper: '{0}'",myFullName.Trim().ToUpper());
+            Console.WriteLine("Trim:'{0}' ", myFullName.Trim());
+            Console.WriteLine("ToUpper: '{0}'", myFullName.Trim().ToUpper());
 
             var index = myFullName.IndexOf(' ');
+
+            var sentance = "this is going to be a really really really really really long sentence";
+            var summeryWords = summerize(sentance,25);
+            Console.WriteLine(summeryWords);
         }
 
         public static void increment(int number)
         {
             number += 10;
+        }
+
+        static string summerize(string text,int maxWords = 20)
+        {
+
+            if (text.Length < maxWords)
+            {
+                return text;
+            }
+            else
+            {
+                //we need to remove the empty space
+                //So if the words is "The brown fox" it will return an array [The][Brown][Fox]
+                var words = text.Split(' ');
+                var totalWords = 0;
+                var summeyList = new List<string>();
+                foreach (var word in words)
+                {
+                    summeyList.Add(word);
+                    totalWords += words.Length + 1;
+                    if (totalWords > maxWords)
+                    {
+                        break;
+                    }
+
+                }
+                var summery = String.Join(" ", summeyList) + "...";
+                return summery;
+            };
+
         }
 
 
