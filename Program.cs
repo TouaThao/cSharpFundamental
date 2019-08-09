@@ -3,6 +3,8 @@
 using System;
 using System.Collections.Generic;
 using c_Demo.Math;
+using System.Text;
+
 
 
 //This is a collection of classes
@@ -145,46 +147,18 @@ namespace c_Demo
             var index = myFullName.IndexOf(' ');
 
             var sentance = "this is going to be a really really really really really long sentence";
-            var summeryWords = summerize(sentance,25);
+            var summeryWords = StringUsage.summerize(sentance,30);
             Console.WriteLine(summeryWords);
+
+            var builder = new StringBuilder();
+            builder.Append('-',10);
+            Console.WriteLine(builder);
         }
 
         public static void increment(int number)
         {
             number += 10;
         }
-
-        static string summerize(string text,int maxWords = 20)
-        {
-
-            if (text.Length < maxWords)
-            {
-                return text;
-            }
-            else
-            {
-                //we need to remove the empty space
-                //So if the words is "The brown fox" it will return an array [The][Brown][Fox]
-                var words = text.Split(' ');
-                var totalWords = 0;
-                var summeyList = new List<string>();
-                foreach (var word in words)
-                {
-                    summeyList.Add(word);
-                    totalWords += words.Length + 1;
-                    if (totalWords > maxWords)
-                    {
-                        break;
-                    }
-
-                }
-                var summery = String.Join(" ", summeyList) + "...";
-                return summery;
-            };
-
-        }
-
-
 
     }
 }
