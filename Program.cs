@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using c_Demo.Math;
 using System.Text;
+using System.IO;
 
 
 
@@ -161,9 +162,8 @@ namespace c_Demo
             var nameReverse = reverseName(yourName);
             Console.WriteLine(" reversed Name " + nameReverse);
 
-            //Take in a number
+            // Take in a number
             var numberTakers = new List<int>();
-
             while (true)
             {
                 Console.WriteLine("Enter a number or (type 'QUIT' to exit):");
@@ -177,20 +177,26 @@ namespace c_Demo
                     numberTakers.Add(Convert.ToInt32(readNumber));
                 }
             }
-
-            var uniques = new List<int>();
-            foreach (var numberTaker in numberTakers)
-            {
-                if (!uniques.Contains(numberTaker))
-                {
-                    uniques.Add(numberTaker);
-                }
+            var uniques = GetUniqueNumber(numberTakers);
                 Console.WriteLine("Uniques number:");
                 foreach (var numberTake in uniques)
                 {
                     Console.WriteLine(numberTake);
                 }
+
+                
             }
+
+        public static List<int> GetUniqueNumber(List <int> uniquesNumbers){
+            var uniques = new List<int>();
+            foreach(var uniquesNumber in uniquesNumbers){
+                  if (!uniques.Contains(uniquesNumber))
+                {
+                    uniques.Add(uniquesNumber);
+                    Console.WriteLine("testing the loop " + uniquesNumber);
+                }
+            }
+            return uniques;
 
         }
 
@@ -199,17 +205,21 @@ namespace c_Demo
             //We make an array that hold character. Inside of the array it hold all the 
             //user name
             var array = new char[yourName.Length];
+            //we have our name here
+            Console.WriteLine( yourName);
             //Now we do a for loop. To loop through them.
             for (var gg = yourName.Length; gg > 0; gg--)
             {
                 //Our array with our name length i
                 array[yourName.Length - gg] = yourName[gg - 1];
+                Console.WriteLine( array);
 
             }
             return new string(array);
 
 
         }
+
 
         public static void increment(int number)
         {
